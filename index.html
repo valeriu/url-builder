@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>URL Builder</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+	</head>
+	<body>
+	<div class="row">
+		<div class="columns">
+			<h1>URL Builder</h1>
+			<p>The URL builder helps you add parameters to URLs you use in custom web-based or social media campaigns. When users click one of the custom links, the unique parameters are sent to your Google Analytics account, so you can identify the URLs that are most effective in attracting users to your content.</p>
+			<hr>
+			<form>
+				<div class="row">
+					<div class="small-12 columns">
+						<div class="row">
+							<div class="columns">
+								<label for="post-url" class="inline">
+									<input type="text" name="post-url" id="post-url" placeholder="Enter a post URL">
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="small-12 columns">
+						<div class="row">
+							<div class="columns">
+								<label for="post-name" class="right inline">
+									<input type="text" name="post-name" id="post-name" placeholder="Enter a post Name">
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="small-12 columns">
+						<div class="row">
+							<div class="small-12 columns">
+								<a class="right button" id="generate-url">Generate URLs</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+
+			<h2 class="subheader">Generated URLs</h2>
+
+			<div id="url-results">Oops, you have to add all parameters!</div>
+		</div>
+	</div>
+
+	</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "url-builder",
+  "homepage": "https://github.com/valeriu/url-builder",
+  "authors": [
+    "Valeriu Tihai <valeriu@tihai.md>"
+  ],
+  "description": "Generate custom campaign parameters for http://aliona.tihai.ca blog posts URLs",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {}
+}
