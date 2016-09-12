@@ -1,9 +1,9 @@
-<html>
+<html lang="en" ng-app="urlBuilderApp">
 	<head>
 		<title>URL Builder</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 		<script src="main.js"></script>
-		<link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
 	</head>
 	<body>
 	<div class="row">
@@ -17,7 +17,7 @@
 						<div class="row">
 							<div class="columns">
 								<label for="post-url" class="inline">
-									<input type="text" name="post-url" id="post-url" placeholder="Enter a post URL">
+									<input ng-model="posturl" type="url" name="post-url" id="post-url" placeholder="Enter a post URL">
 								</label>
 							</div>
 						</div>
@@ -26,27 +26,26 @@
 						<div class="row">
 							<div class="columns">
 								<label for="post-name" class="right inline">
-									<input type="text" name="post-name" id="post-name" placeholder="Enter a post Name">
+									<input ng-model="postname" type="text" name="post-name" id="post-name" placeholder="Enter a post Name">
 								</label>
-							</div>
-						</div>
-					</div>
-					<div class="small-12 columns">
-						<div class="row">
-							<div class="small-12 columns">
-								<a class="right button" id="generate-url">Generate URLs</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</form>
 
+			<div ng-hide="posturl && postname" class=" callout radius alert">Oops, you have to add all parameters!</div>
 
-			<h2 class="subheader">Generated URLs</h2>
-
-			<div id="url-results">Oops, you have to add all parameters!</div>
+			<div class="row" ng-controller="UrlController" ng-show="posturl && postname">
+				<div class="small-12 columns">
+					<h2 class="subheader">Generated URLs</h2>
+					<div class="primary callout radius" ng-repeat="sn in socialnetworks">
+						<span class=" info radius label">{{sn.name}}</span>
+						<br>{{posturl}}?utm_source={{sn.utm_source}}&utm_medium={{sn.utm_medium}}&utm_campaign={{postname | capitalizeFirstLetter:true}}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-
 	</body>
 </html>
